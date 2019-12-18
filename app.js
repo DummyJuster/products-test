@@ -46,12 +46,11 @@ const products = [
 
 
 function totalSumOfProducts (products) {
-  let sum = 0; 
-
-  // Your Solution goes here. 
-
-
-  return sum; 
+  return (products.map (function (product){
+    return Object.keys(product).length == Object.values(product).filter(value => value).length ? Object.values(product).filter(value => value>0)[0] : 0
+  }).reduce (function (sum, price){
+    return sum += price;
+  }))/100 ;
 }
 
 
